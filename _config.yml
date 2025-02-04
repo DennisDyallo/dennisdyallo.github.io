@@ -1,3 +1,19 @@
 theme: jekyll-theme-minimal
-title: Dennis Dyallo homepage
+title: Dyallo homepage
 description: Bookmark this to keep an eye on my project updates!
+
+# Additional useful configs
+author: Dennis Dyall
+github_username: dennisdyallo
+linkedin_username: dennis-dyall
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
+timezone: Europe/Stockholm
+
+# Optional but recommended
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -1,8 +1,9 @@
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/leap-day@v0.2.0
+
 title: Dyallo homepage
 description: Bookmark this to keep an eye on my project updates!
 
-# Additional useful configs
+# Author info
 author: Dennis Dyall
 github_username: dennisdyallo
 linkedin_username: dennis-dyall
@@ -12,8 +13,10 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 timezone: Europe/Stockholm
 
-# Optional but recommended
+show_excerpts: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-remote-theme

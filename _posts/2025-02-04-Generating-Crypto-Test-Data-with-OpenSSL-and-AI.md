@@ -1,3 +1,5 @@
+[Home](/) | [Blog](/blog) | [About](/about) | [GitHub](https://github.com/dennisdyallo)
+
 # Generating Crypto Test Data with OpenSSL and AI
 
 ## Overview

@@ -18,7 +18,7 @@ I recently needed to generate a comprehensive set of cryptographic test data, in
 - Ed25519
 - X25519
 
-## The Challenge
+## The challenge
 Manually generating these files would have been time-consuming, potentially taking an hour or more. Instead, I leveraged AI to automate the process.
 
 ## Solution
@@ -38,16 +38,16 @@ EC: P256, P384, P521, ED25519 and X25519
 - Script executed successfully without modifications
 - Data ready for immediate use in unit and integration tests
 
-## Future Use
+## Future use
 The script has been added to our repository to:
 - Allow developers to regenerate test data when needed
 - Serve as a reference for similar cryptographic operations
 - Provide a template for custom key generation scenarios
 
-## Next Steps
+## Next steps
 I'll be incorporating this generated data into our test suite and documenting the process for team reference.
 
-## The Script
+## The script
 
 ```bash
 #!/bin/bash
@@ -133,7 +133,7 @@ echo "All keys and certificates have been generated in the crypto_keys directory
 
 ```
 
-## Implementation Notes
+## Implementation notes
 - Script requires OpenSSL installed on your system
 - Outputs are generated in the current directory
 - Files are named systematically based on key type and size

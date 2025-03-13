@@ -6,15 +6,15 @@ As a web developer transitioning into cryptographic development at Yubico, I've 
 
 This post aims to demystify these encoding standards and provide a practical reference for developers in similar situations.
 
-## The Web Developer's Perspective
+## The web developer's perspective
 
 Coming from web development, JSON was my go-to format for data exchange. It's human-readable, well-supported, and straightforward. However, in the cryptographic world, we need formats that can handle binary data efficiently, ensure deterministic encoding, and maintain compatibility with legacy systems.
 
-## Understanding the Encoding Landscape
+## Understanding the encoding landscape
 
 Let's break down the main encoding methods you'll encounter in cryptographic development:
 
-### Quick Reference Table
+### Quick reference table
 
 | Format | Structure                | Use Cases          | Advantages          | Disadvantages                  |
 | ------ | ------------------------ | ------------------ | ------------------- | ------------------------------ |
@@ -24,7 +24,7 @@ Let's break down the main encoding methods you'll encounter in cryptographic dev
 | PEM    | Base64(DER) + headers    | Certificates, keys | Human readable      | Larger size                    |
 | COSE   | CBOR maps                | WebAuthn, IoT      | Compact, modern     | Newer, less supported          |
 
-## Deep Dive into Each Format
+## Deep dive into each format
 
 ### TLV (Tag-Length-Value)
 
@@ -73,7 +73,7 @@ A4                    # Map(4)
       [32 key bytes]
 ```
 
-## Working with Different Formats
+## Working with different formats
 
 Here's a practical example of converting between formats in C#:
 
@@ -97,14 +97,14 @@ byte[] coseKey = new byte[] {
     .ToArray();
 ```
 
-## When to Use What
+## When to use what
 
 1. **TLV**: Perfect for resource-constrained environments or when working directly with hardware.
 2. **BER/DER**: The standard choice for PKI and certificate operations.
 3. **PEM**: When you need human-readable formats or are working with text-based protocols.
 4. **COSE**: The modern choice for WebAuthn and IoT applications.
 
-## Security Best Practices
+## Security best practices
 
 Remember these key points when working with encoded data:
 
@@ -119,7 +119,7 @@ Remember these key points when working with encoded data:
    - Use fixed-length buffers where appropriate
    - Be aware of encoding size changes
 
-## Learning from Experience
+## Learning from experience
 
 Working at Yubico has taught me that understanding these encoding formats is crucial for cryptographic development. While they might seem complex at first, each serves a specific purpose in the security ecosystem.
 

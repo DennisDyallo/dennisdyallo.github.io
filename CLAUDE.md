@@ -15,7 +15,7 @@
 - Use Markdown for content
 - Post frontmatter needs: `layout: post`, `title:`, `date:`, optional `categories:`
 - Image path: `/assets/images/`
-- Internal links: `[text]({% link pagename.md %})`
+- Internal links: `[text]({% raw %}{% link pagename.md %}{% endraw %})`
 - Code blocks: Use triple backticks with language specified
 
 ## Jekyll Configuration

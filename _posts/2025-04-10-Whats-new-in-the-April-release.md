@@ -264,7 +264,7 @@ finally
 
 ## Migration Guide
 
-The old PIV key types will still function, but are deprecated. The new classes are designed to be more usable and they support the new key types. Most users will find the new keys The old classes will be removed in a future version of the SDK. 
+The old PIV key types will still function, but are deprecated. The new classes are designed to be more usable and they support the new key types. Most users will find the new key types and their factory methods easy to use. The old classes will be removed in a future version of the SDK. 
 When updating your code from the old API to the new one:
 
 1. Replace `PivAlgorithm` values with the corresponding `KeyType`:

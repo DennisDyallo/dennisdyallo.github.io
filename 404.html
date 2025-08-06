@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Get the full path the user tried to access.
+    const path = window.location.pathname;
+
+    // Find the part of the path that represents the app's base.
+    // e.g., for "/apps/event-countdown/es", this will be "/apps/event-countdown/"
+    const appBasePathMatch = path.match(/^(\/apps\/[^/]+\/)/);
+
+    if (appBasePathMatch) {
+      const appBasePath = appBasePathMatch[1];
+      // Find the path within the app (e.g., "es" or "es/some/deep/link")
+      const pathWithinApp = path.substring(appBasePath.length);
+      
+      // Redirect to the app's index.html, passing the internal path as a query param.
+      // This becomes: /apps/event-countdown/?p=/es
+      window.location.replace(appBasePath + '?p=/' + pathWithinApp + window.location.search + window.location.hash);
+    } else {
+      // If the path doesn't match an app structure, just go to the homepage.
+      window.location.replace('/');
+    }
+  </script>
+</head>
+<body>
+  <p>If you are not redirected automatically, please return to the <a href="https://dennisdyallo.github.io">homepage</a>.</p>
+</body>
+</html>

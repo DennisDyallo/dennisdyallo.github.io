@@ -40,12 +40,20 @@
             window.history.replaceState(null, '', newUrl);
         }
     </script>
-  <script type="module" crossorigin src="/apps/event-countdown/assets/index-rFVw8ZxA.js"></script>
-  <link rel="stylesheet" crossorigin href="/apps/event-countdown/assets/index-DiNvrSrw.css">
+  <script type="module" crossorigin src="/apps/event-countdown/assets/index-DdEcSocf.js"></script>
+  <link rel="stylesheet" crossorigin href="/apps/event-countdown/assets/index-BSsJcn1y.css">
 </head>
 
 <body>
     <div class="container">
+        <header class="app-header">
+            <div class="language-selector-wrapper">
+                <label for="language" data-i18n-key="languageLabel">Language</label>
+                <select id="language">
+                    <!-- Options will be dynamically populated by CountdownUI.js -->
+                </select>
+            </div>
+        </header>
         <div class="content">
             <h1>Business Days Countdown</h1>
 
@@ -58,13 +66,6 @@
                 <div class="input-group">
                     <label for="holidayCalendar">Holiday Calendar</label>
                     <select id="holidayCalendar">
-                        <!-- Options will be dynamically populated by CountdownUI.js -->
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="language" data-i18n-key="languageLabel">Language</label>
-                    <select id="language">
                         <!-- Options will be dynamically populated by CountdownUI.js -->
                     </select>
                 </div>

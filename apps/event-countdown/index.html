@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Days Countdown</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges. Calculate the exact number of working days until your deadline.">
-    <meta name="keywords" content="business days countdown, working days calculator, countdown timer, deadline calculator, project management, productivity tool, holiday exclusion">
+    <meta name="description"
+        content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges. Calculate the exact number of working days until your deadline.">
+    <meta name="keywords"
+        content="business days countdown, working days calculator, countdown timer, deadline calculator, project management, productivity tool, holiday exclusion">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-website-url.com/">
     <meta property="og:title" content="Business Days Countdown">
-    <meta property="og:description" content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges.">
+    <meta property="og:description"
+        content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges.">
     <meta property="og:image" content="https://your-website-url.com/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://your-website-url.com/">
     <meta property="twitter:title" content="Business Days Countdown">
-    <meta property="twitter:description" content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges.">
+    <meta property="twitter:description"
+        content="A real-time business day countdown timer that excludes weekends, public holidays, and custom date ranges.">
     <meta property="twitter:image" content="https://your-website-url.com/og-image.png">
 
     <!-- Hreflang links will be dynamically injected by server.js -->
     <script>
- // This script handles the redirect from the root 404.html page.
-      const params = new URLSearchParams(window.location.search);
-      const path = params.get('p');
-      if (path) {
-        // Reconstruct the full, correct URL.
-        const newUrl = window.location.pathname + path.substring(1) + window.location.hash;
-        // Use replaceState to update the URL without a page reload.
-        // The router and localization service will now see the correct path.
-        window.history.replaceState(null, '', newUrl);
+        const params = new URLSearchParams(window.location.search);
+        const path = params.get('p');
+        if (path && path.startsWith('/')) {
+            // Validate path to prevent open redirects
+            const sanitizedPath = path.replace(/[^\w\-._~:/?#[\]@!$&'()*+,;=%]/g, '');
+            const newUrl = window.location.origin + sanitizedPath + window.location.hash;
+            window.history.replaceState(null, '', newUrl);
+        }
     </script>
   <script type="module" crossorigin src="/apps/event-countdown/assets/index-rFVw8ZxA.js"></script>
   <link rel="stylesheet" crossorigin href="/apps/event-countdown/assets/index-DiNvrSrw.css">
 </head>
+
 <body>
     <div class="container">
         <div class="content">
             <h1>Business Days Countdown</h1>
-            
+
             <div class="controls">
                 <div class="input-group">
                     <label for="targetDate">Target Date</label>
                     <input type="datetime-local" id="targetDate">
                 </div>
-                
+
                 <div class="input-group">
                     <label for="holidayCalendar">Holiday Calendar</label>
                     <select id="holidayCalendar">
@@ -63,19 +68,19 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="options">
                 <div class="checkbox-group">
                     <input type="checkbox" id="excludeWeekends" checked>
                     <label for="excludeWeekends">Exclude Weekends</label>
                 </div>
-                
+
                 <div class="checkbox-group">
                     <input type="checkbox" id="excludeHolidays" checked>
                     <label for="excludeHolidays">Exclude Holidays</label>
                 </div>
             </div>
-            
+
             <div class="countdown" id="countdown">
                 <div class="time-unit">
                     <div class="time-value" id="businessDays">--</div>
@@ -94,7 +99,7 @@
                     <div class="time-label">Seconds</div>
                 </div>
             </div>
-            
+
             <div class="custom-exclusions">
                 <div class="exclusion-header">
                     <h3>Custom Date Exclusions</h3>
@@ -111,4 +116,5 @@
     </div>
 
 </body>
+
 </html>

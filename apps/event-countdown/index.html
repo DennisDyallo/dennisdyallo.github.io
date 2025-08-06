@@ -30,12 +30,13 @@
 
     <!-- Hreflang links will be dynamically injected by server.js -->
     <script>
+        // This script handles the redirect from the root 404.html page.
         const params = new URLSearchParams(window.location.search);
         const path = params.get('p');
-        if (path && path.startsWith('/')) {
-            // Validate path to prevent open redirects
-            const sanitizedPath = path.replace(/[^\w\-._~:/?#[\]@!$&'()*+,;=%]/g, '');
-            const newUrl = window.location.origin + sanitizedPath + window.location.hash;
+        if (path) {
+            // Reconstruct the full, correct URL.
+            const newUrl = window.location.pathname + path.substring(1) + window.location.hash;
+            // Use replaceState to update the URL without a page reload.
             window.history.replaceState(null, '', newUrl);
         }
     </script>
